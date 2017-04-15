@@ -1,0 +1,10 @@
+# This file is - if you set up correctly - not needed.
+Options +FollowSymLinks
+IndexIgnore */*
+# Turn on the RewriteEngine
+RewriteEngine On
+#  Rules
+RewriteRule ^([A-Za-z0-9-_]+)/?$ index.php?route=$1
+RewriteRule ^([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/?$ index.php?route=$1&id=$2
+RewriteRule ^([A-Za-z0-9-_]+)/([A-Za-z0-9-_]+)/([0-9-]+)/?$ index.php?route=$1&name=$2&id=$3 [L,QSA]
+ErrorDocument 404 /404
